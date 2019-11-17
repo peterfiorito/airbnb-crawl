@@ -1,0 +1,39 @@
+{
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "rules": {
+      "camelcase": "off",
+      "comma-dangle": "off",
+      "eqeqeq": "off",
+      "func-names": "off",
+      "function-paren-newline": "off",
+      "import/no-named-as-default": "off",
+      "no-console": "off",
+      "no-param-reassign": "off",
+      "no-return-assign": "off",
+      "no-undef": "off",
+      "no-unused-vars": "off",
+      "no-use-before-define": "off",
+      "object-shorthand": "off",
+      "space-before-function-paren": "off",
+      "react/prop-types": "off",
+      "no-mixed-operators": "off",
+      "no-new": "off",
+      "no-underscore-dangle": "off",
+      "no-nested-ternary": "off"
+    },
+    "parser": "babel-eslint",
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src"]
+        }
+      },
+      "react": {
+        "version": "detect"
+      }
+    }
+  }
+  

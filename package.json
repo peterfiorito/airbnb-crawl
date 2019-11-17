@@ -1,0 +1,33 @@
+{
+  "name": "airbnb-webcrawler",
+  "version": "0.0.1",
+  "description": "airbnb scraper",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/nodemon/bin/nodemon.js index.js",
+    "test": "test"
+  },
+  "keywords": [
+    "airbnb",
+    "scraper"
+  ],
+  "author": "PJF",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.1",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "he": "^1.2.0",
+    "nodemon": "^1.19.4",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-loader": "^3.0.2",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}

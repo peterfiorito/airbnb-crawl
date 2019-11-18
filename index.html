@@ -4,13 +4,17 @@
     <meta charset="utf-8" />
     <title>Airbnb Crawler</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" sizes="76x76" type="image/x-icon" href="airbnb.ico">
+    <link rel="stylesheet" href="app.css">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
   <body>
-    <h1>Airbnb Room Crawler</h1>
-    <form action="/room" method="POST">
-        <input name="roomUrl"/>
-        <button type="submit">Crawl me this room ad</button>
-    </form>
+    <div class="main__wrapper">
+      <h1 class="main__title">Airbnb Room Crawler</h1>
+      <form action="/room" method="POST" class="main__form">
+          <input name="roomUrl" class="main__form-input" placeholder="url eg: https://www.airbnb.co.uk/rooms/28299515"/>
+          <button type="submit" class="main__form-button">Crawl me this room ad</button>
+      </form>
+    </div>
   </body>
 </html>

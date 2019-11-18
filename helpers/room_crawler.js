@@ -1,17 +1,13 @@
 const cheerio = require('cheerio');
 const https = require('https');
 const he = require('he'); 
+const urlParser = require('url');
 
-// const query = 'https://www.airbnb.co.uk/rooms/28299515';
-const query = process.env.URL;
-const opts = require('url').parse(query);
-
-opts.headers = {
-  'User-Agent': 'javascript'
-};
-
-// Add url filter to airbnb domains
 const fetch = (url) => {
+  const opts = urlParser.parse(url);
+  opts.headers = {
+    'User-Agent': 'javascript'
+  };
   console.log('Processing', url);
   return new Promise(function (resolve, reject) {
       https.get(url, opts, function (res) {
@@ -23,11 +19,14 @@ const fetch = (url) => {
           res.on('end', function () {
               resolve(body);
           })
+          res.on('error', function (err){
+            reject(err);
+          })
       });
   });
 };
 
-fetch(query).then(function(body) {
+const init = (url) => fetch(url).then(function(body) {
   const $ = cheerio.load(body);
   
   // Sections
@@ -127,9 +126,9 @@ fetch(query).then(function(body) {
     images: imageList
   };
 
-  console.log(aibnbFormattedResults)
-
   return aibnbFormattedResults;
 }).catch((err) => {
   throw new Error(err);
 });
+
+module.exports = init;

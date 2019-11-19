@@ -1,9 +1,12 @@
 const express = require('express');
+const helmet = require('helmet');
 const path = require('path');
 const bodyParser  = require('body-parser');
 const RoomCrawler = require('./helpers/room_crawler');
 
 const app = express();
+
+app.use(helmet());
 
 app.use(function (req, res, next) {
   console.log('%s %s %s', req.method, req.url, req.path);
@@ -14,7 +17,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 const router = express.Router();
-router.get('/example', (req, res) => res.json({ route: req.originalUrl }));
 
 router.use(express.static(path.join(process.cwd(), '.')));
 router.get('/', function (res) {

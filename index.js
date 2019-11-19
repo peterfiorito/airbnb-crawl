@@ -26,9 +26,13 @@ router.get('/', function (res) {
 router.post('/room', async (req, res, next) => {
     const url = req.body.roomUrl;
     if(/airbnb+((.co.uk)|(.com)+\/rooms\/)(.*)/.test(url)){
-      const crawl = await RoomCrawler(url);
-      res.set('Content-Type', 'text/html');
-      res.send(Buffer.from(`<pre>${JSON.stringify(crawl, undefined, 2)}</pre>`));
+      await RoomCrawler(url).then((result) => {
+        res.set('Content-Type', 'text/html');
+        res.send(Buffer.from(`<pre>${JSON.stringify(result, undefined, 2)}</pre>`));
+      }).catch((err) => {
+        res.set('Content-Type', 'text/html');
+        res.send(Buffer.from(`<p>There was an error processing your crawl request: ${err}</p>`));
+      });
     } else {
       res.json({error: `${url} doesn't match airbnb room url shape eg. 'https://www.airbnb.co.uk/rooms/28299515`})
     }

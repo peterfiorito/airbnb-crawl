@@ -1,7 +1,7 @@
 # Airbnb WebCrawler
 
-----
 ## Usage
+----
 
 > This is only meant to be used for educational purposes and by no means should be used to do anything against airbnb's terms and conditions.
 

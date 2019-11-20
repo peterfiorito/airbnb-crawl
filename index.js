@@ -23,10 +23,10 @@ router.get('/', function (res) {
     res.sendFile(path.join(process.cwd(), '.', 'index.html'));
 });
 
-router.post('/room', async (req, res, next) => {
+router.post('/room', (req, res, next) => {
     const url = req.body.roomUrl;
     if(/airbnb+((.co.uk)|(.com)+\/rooms\/)(.*)/.test(url)){
-      await RoomCrawler(url).then((result) => {
+      RoomCrawler(url).then((result) => {
         res.set('Content-Type', 'text/html');
         res.send(Buffer.from(`<pre>${JSON.stringify(result, undefined, 2)}</pre>`));
       }).catch((err) => {

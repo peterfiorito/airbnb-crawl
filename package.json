@@ -21,7 +21,7 @@
     "he": "^1.2.0",
     "helmet": "^3.21.2",
     "nodemon": "^1.19.4",
-    "request": "^2.88.0"
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",

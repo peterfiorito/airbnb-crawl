@@ -20,7 +20,7 @@
     "express": "^4.17.1",
     "he": "^1.2.0",
     "helmet": "^3.21.2",
-    "nodemon": "^1.19.4",
+    "nodemon": "^2.0.6",
     "request": "^2.88.0"
   },
   "devDependencies": {

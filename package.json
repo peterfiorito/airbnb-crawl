@@ -17,7 +17,7 @@
     "bluebird": "^3.7.1",
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "he": "^1.2.0",
     "helmet": "^3.21.2",
     "nodemon": "^1.19.4",
